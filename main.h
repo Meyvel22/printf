@@ -11,7 +11,8 @@
 int _putchar(char c);
 int _printf(const char * const format, ...);
 int _write_char(va_list arglist);
-int _write_str(va_list arglist);
+int _write_str(va_list arg_list, char *buffer, unsigned int ibuf);
 int _write_int(va_list arglist);
 
+$ d
 #endif
