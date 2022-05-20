@@ -9,9 +9,10 @@
 #include <limits.h>
 
 int _printf(const char * const format, ...);
-int _write_buffer(char *buffer, unsigned int bytes_size);
 unsigned int manage_buffer(char *buffer_pointer, char c , unsigned int index_of_pointer);
+int _write_buffer(char *buffer, unsigned int bytes_size);
 int _write_char(va_list arg_list, char *buffer, unsigned int buffer_index);
 int _write_str(val_list arg_list, char *buffer, unsigned int buffer_index);
+int _write_int(val_list arg_list, char *buffer, unsigned int buffer_index);
 
 #endif

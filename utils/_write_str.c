@@ -1,25 +1,27 @@
-//
-// Created by Muhyideen Elias on 20/05/2022.
-//
-
 #include "../main.h"
-
+/**
+ * _write_str: writes string to stdout
+ * @arg_list: char input
+ * @buffer: buffer pointer
+ * @buffer_index: index for buffer pointer
+ * Return: 1 on success.
+ */
 int _write_str(va_list arg_list, char *buffer, unsigned int buffer_index)
 {
     char *str;
-    unsigned int index = 0;
+    unsigned int index;
     char null[] = "(null)";
 
-    str = var_arg(arg_list, char *);
+    str = va_arg(arg_list, char *);
 
     if (str == NULL)
     {
-        for (; null[index]; i++)
+        for (index = 0; null[index]; index++)
             buffer_index = manage_buffer(buffer, null[index], buffer_index);
 
         return  6;
     }
-    for (count = 0; str[index], index++)
+    for (index = 0; str[index]; index++)
         buffer_index = manage_buffer(buffer, str[index], buffer_index);
-    return (i);
+    return (index);
 }

@@ -1,11 +1,7 @@
-//
-// Created by Muhyideen Elias on 19/05/2022.
-//
-
 /**
- * _putchar - write the character to stdout
- * @c: The character to print
- *
+ * _write_buffer - write the character to stdout
+ * @buffer: buffer pointer
+ * @bytes_size: size or number of bytes to print
  * Return: On success 1
  * Return: On error, -i is returned.
  */

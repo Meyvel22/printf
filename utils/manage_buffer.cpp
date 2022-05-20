@@ -1,9 +1,4 @@
-//
-// Created by Muhyideen Elias on 19/05/2022.
-//
-
 #include "../main.h"
-
 /**
  * manage_buffer - concatenates buffer characters
  * buffer: buffer pointer
@@ -12,15 +7,15 @@
  * Return: index of buffer pointer
  */
 
-unsigned int manage_buffer(char *buffer_pointer, char c , unsigned int index_of_pointer)
+unsigned int manage_buffer(char *buffer_pointer, char c , unsigned int buffer_index)
 {
-    if (index_of_pointer == 1024)
+    if (buffer_index == 1024)
     {
-        _print_buffer(buffer_pointer, index_of_pointer)
-        index_of_buffer = 0;
+        _write_buffer(buffer_pointer, buffer_index);
+        buffer_index = 0;
     }
-    buffer_pointer[index_of_pointer] = c;
+    buffer_pointer[buffer_index] = c;
     buffer_pointer++;
 
-    return buffer_pointer;
+    return buffer_index;
 }
