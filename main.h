@@ -8,7 +8,7 @@
 #include <stddef.h>
 #include <limits.h>
 
-int _printf(const char * const format, ...);
+int _printf(const char *format, ...);
 unsigned int manage_buffer(char *b_pointer, char c, unsigned int b_index);
 int _write_buffer(char *buffer, unsigned int bytes_size);
 int _write_char(va_list arg_list, char *buffer, unsigned int b_index);
