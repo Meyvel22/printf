@@ -12,7 +12,7 @@
 
 #include "../main.h"
 
-int _putchar(char c)
+int _write_buffer(char *buffer, unsigned int bytes_size)
 {
-    return (write(1, &c, 1));
+    return (write(1, buffer, bytes_size));
 }
