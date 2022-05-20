@@ -24,7 +24,11 @@ int _write_b(va_list arg_list, int l)
 
 int _write_binary(unsigned int n, int l)
 {
-	if ((n / 2) == 0)
+	if ((n / 2) != 0)
 	{
-		_putchar((n % 2) + 47);
-		l += 
+		_write_binary(n / 2, l);
+	}
+	_putchar((n % 2) + '0');
+	l += get_length(n, 2);
+	return (l + 1);
+}
