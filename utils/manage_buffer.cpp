@@ -7,15 +7,15 @@
  * Return: index of buffer pointer
  */
 
-unsigned int manage_buffer(char *buffer_pointer, char c , unsigned int buffer_index)
+unsigned int manage_buffer(char *b_pointer, char c , unsigned int b_index)
 {
-    if (buffer_index == 1024)
+    if (b_index == 1024)
     {
-        _write_buffer(buffer_pointer, buffer_index);
-        buffer_index = 0;
+        _write_buffer(b_pointer, b_index);
+        b_index = 0;
     }
-    buffer_pointer[buffer_index] = c;
-    buffer_pointer++;
+    b_pointer[b_index] = c;
+    b_pointer++;
 
-    return buffer_index;
+    return b_index;
 }

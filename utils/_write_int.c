@@ -6,7 +6,7 @@
  * @ibuf: index for buffer pointer
  * Return: number of chars printed.
  */
- int _write_int(va_list arg_list, char *buffer, unsigned int buffer_index)
+ int _write_int(va_list arg_list, char *buffer, unsigned int b_index)
 {
      int input;
      unsigned int int_temp, int_in, counter, divide, isnegative;
@@ -17,7 +17,7 @@
      if (input < 0)
      {
          int_in = input * - 1;
-         buffer_index = manage_buffer(buffer, '-', buffer_index);
+         b_index = manage_buffer(buffer, '-', b_index);
          isnegative = 1;
      }
      else
@@ -34,7 +34,7 @@
      }
 
      for (counter = 0; divide > 0; divide /= 10, counter++){
-         buffer_index = manage_buffer(buffer, ((int_in / divide) % 10) + '0', buffer_index);
+         b_index = manage_buffer(buffer, ((int_in / divide) % 10) + '0', b_index);
      }
 
      return (counter + isnegative);

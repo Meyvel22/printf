@@ -6,7 +6,7 @@
  * @buffer_index: index for buffer pointer
  * Return: 1 on success.
  */
-int _write_str(va_list arg_list, char *buffer, unsigned int buffer_index)
+int _write_str(va_list arg_list, char *buffer, unsigned int b_index)
 {
     char *str;
     unsigned int index;
@@ -17,11 +17,11 @@ int _write_str(va_list arg_list, char *buffer, unsigned int buffer_index)
     if (str == NULL)
     {
         for (index = 0; null[index]; index++)
-            buffer_index = manage_buffer(buffer, null[index], buffer_index);
+            b_index = manage_buffer(buffer, null[index], b_index);
 
         return  6;
     }
     for (index = 0; str[index]; index++)
-        buffer_index = manage_buffer(buffer, str[index], buffer_index);
+        b_index = manage_buffer(buffer, str[index], b_index);
     return (index);
 }
