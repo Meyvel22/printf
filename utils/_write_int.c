@@ -36,4 +36,6 @@
      for (counter = 0; divide > 0; divide /= 10, counter++){
          buffer_index = manage_buffer(buffer, ((int_in / divide) % 10) + '0', buffer_index);
      }
+
+     return (counter + isnegative);
 }
