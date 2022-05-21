@@ -9,7 +9,7 @@
 #include <limits.h>
 
 /**
- * struct print - structure that contain flag and funtion
+ * struct format - structure that contain flag and funtion
  * @iden: character that identify the function
  * @func: pointer to the function
  */
