@@ -8,11 +8,24 @@
 #include <stddef.h>
 #include <limits.h>
 
-int _printf(const char * const format, ...);
-unsigned int manage_buffer(char *b_pointer, char c , unsigned int b_index);
-int _write_buffer(char *buffer, unsigned int bytes_size);
-int _write_char(va_list arg_list, char *buffer, unsigned int b_index);
-int _write_str(va_list arg_list, char *buffer, unsigned int b_index);
-int _write_int(va_list arg_list, char *buffer, unsigned int b_index);
+/**
+ * struct format - structure that contain flag and funtion
+ * @t_id: character that identify the function
+ * @func: pointer to the function
+ */
+
+typedef struct print
+{
+	char *t_id;
+	int (*func)(va_list);
+} type;
+
+int _printf(const char *format, ...);
+int _putchar(char c);
+
+int _write_char(va_list c);
+int _write_str(va_list arg_list);
+static int (*check_specifies(const char *format))(va_list)
+
 
 #endif
