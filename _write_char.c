@@ -1,36 +1,18 @@
 #include "main.h"
 
 /**
-  * _write_ch - Prints a char to std output
-  * @arg_list: List of arguments
-  * @l: Length of string so far
-  *
-  * Return: len
-  */
-int _write_ch(va_list arg_list, int l)
+ * write_char - writes the character c to stdout
+ * @arg_list: char input
+ * @buffer: buffer pointer
+ * @b_index: buffer pointer index
+ * Return: 1 on success.
+ */
+int write_char(va_list arg_list, char *buffer, unsigned int b_index)
 {
-	char c = va_arg(arg_list, int);
+	char c;
 
-	l += _putchar(c);
-	return (l);
-}
+	c = va_arg(arg_list, int);
+	manage_buffer(buffer, c, b_index);
 
-
-/**
-  * _write_str - Prints a string to std output
-  * @arg_list: List of arguments
-  * @l: Length of string so far
-  *
-  * Return: The new length of the string
-  */
-int _write_str(va_list arg_list, int l)
-{
-	const char *str = va_arg(arg_list, const char *);
-
-	if (str == NULL)
-		str = "(null)";
-	while (*str)
-		l += _putchar(*str++);
-
-	return (l);
+	return (1);
 }

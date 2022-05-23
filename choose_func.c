@@ -7,31 +7,34 @@
  * Return: pointer to function or NULL
  */
 
-int (*choose_func(char c))(va_list, int)
+int (*choose_func(const char *s, int index)) (va_list, char*, unsigned int)
 {
 	form specifics[] = {
-		{'c', _write_char},
-		{'s', _write_str},
-		{'d', _write_int},
-		{'i', _write_int},
-		{'u', _write_unsigned},
-		{'o', _write_octal},
-		{'x', _write_hex},
-		{'X', _write_heX},
-		{'R', _write_rot13},
-		{'b', _write_b},
-		{'S', _write_Str}
+            {'c', _write_char},
+            {'s', _write_str},
+            {" %",_print_p},
+            {NULL, NULL},
 	};
 
-	int x;
+	int i = 0 , j = 0 , f_index;
+    f_index = index;
 
-	for (x = 0; specifics[x].iden; x++)
-	{
-		if (c == specifics[x].iden)
-		{
-			return (specifics[x].func);
-		}
-	}
+    while(specifics[i].type_id)
+    {
+        if(s[index] == specifics->type_id[j])
+        {
+            if(specifics[index].type_id[j + i] != '\0')
+                index++, j++;
+            else
+                break;
+        }
+        else
+        {
+            j = 0;
+            i++;
+            index = f_index;
+        }
+    }
 
-	return (NULL);
+	return specifics[i].func;
 }
