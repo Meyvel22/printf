@@ -2,16 +2,13 @@
 /*
  * _write_char - writes the character c to stdout
  * @arg_list: char input
- * @buffer: buffer pointer
- * @b_index: buffer pointer index
- * return: 1 on success.
+ * return: 1 always
  */
-int _write_char(va_list arg_list, char *buffer, unsigned int b_index)
+int _write_char(va_list arg_list)
 {
-    char c;
+    char c = (char) va_arg(arg_list, int);
 
-    c = va_arg(arg_list, int);
-    manage_buffer(buffer, c, b_index);
+    _putchar(c);
 
     return 1;
 }
