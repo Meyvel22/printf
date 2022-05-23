@@ -1,9 +1,9 @@
-#include "../main.h"
+#include "main.h"
 /**
  * manage_buffer - concatenates buffer characters
- * buffer: buffer pointer
+ * b_pointer: buffer pointer
  * c: character to concatenate
- * index_of_buffer: index of buffer pointer
+ * b_index: index of buffer pointer
  * Return: index of buffer pointer
  */
 
@@ -17,5 +17,5 @@ unsigned int manage_buffer(char *b_pointer, char c , unsigned int b_index)
     b_pointer[b_index] = c;
     b_pointer++;
 
-    return b_index;
+    return (b_index);
 }
