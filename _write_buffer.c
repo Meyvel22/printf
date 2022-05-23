@@ -6,7 +6,7 @@
  * Return: On error, -i is returned.
  */
 
-#include "../main.h"
+#include "main.h"
 
 int _write_buffer(char *buffer, unsigned int bytes_size)
 {

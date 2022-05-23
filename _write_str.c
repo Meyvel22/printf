@@ -1,4 +1,4 @@
-#include "../main.h"
+#include "main.h"
 /**
  * _write_str: writes string to stdout
  * @arg_list: char input
