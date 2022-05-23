@@ -7,14 +7,15 @@
  */
 int _write_str(va_list arg_list)
 {
-    int counter;
-    char *str = va_arg(arg_list, char *);
+	int counter;
+	char *str = va_arg(arg_list, char *);
 
-    if(str == NULL)
-        str = "NULL";
+	if (str == NULL)
+		str = "NULL";
 
-    for (counter = 0; str[counter]; counter++){
-        _putchar(str[counter]);
-    }
-    return counter;
+	for (counter = 0; str[counter]; counter++)
+	{
+		_putchar(str[counter]);
+	}
+	return (counter);
 }

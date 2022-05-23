@@ -9,7 +9,7 @@
 #include <limits.h>
 
 /**
- * struct format - structure that contain flag and funtion
+ * struct print - structure that contain flag and funtion
  * @t_id: character that identify the function
  * @func: pointer to the function
  */
@@ -25,7 +25,7 @@ int _putchar(char c);
 
 int _write_char(va_list c);
 int _write_str(va_list arg_list);
-static int (*check_specifies(const char *format))(va_list)
+static int (*check_specifies(const char *format))(va_list);
 
 
 #endif
