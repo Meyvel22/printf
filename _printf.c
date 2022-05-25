@@ -1,50 +1,49 @@
 #include "main.h"
 
 /**
-  *_printf - prints formatted output.
-  *@format: input.
-  *
-  *Return: number of chars printed or -1.
-  */
+ *  _printf - prints %c and %s format specifier
+ *  @format: format string
+ *  Return: charaters
+ */
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, counter = 0;
-	va_list arg_list;
+	unsigned int x = 0, list = 0;
+	va_list arglist;
 	int (*func)(va_list);
 
 	if (format == NULL)
-	{
 		return (-1);
-	}
 
-	va_start(arg_list, format);
+	va_start(arglist, format);
 
-	while (format[i])
+	while (format[x])
 	{
-		for (i = 0; format[i] != '%' && format[i]; i++)
+		for (; format[x] != '%' && format[x]; x++)
 		{
-			_putchar(format[i]);
-			counter++;
+			_putchar(format[x]);
+			list++;
 		}
-		if (format[i])
-			return (counter);
-		func = check_specifies(&format[i + 1]);
+
+		if (!format[x])
+			return (list);
+
+		f = check_specifies(&format[x + 1]);
 		if (func != NULL)
 		{
-			counter += func(arg_list);
-			i += 2;
+			list += func(arglist);
+			x += 2;
 			continue;
 		}
-		if (!format[i + 1])
+		if (!format[x + 1])
 			return (-1);
-		_putchar(format[i]);
-		counter++;
-		if (format[i + 1] == '%')
-			i += 2;
+		_putchar(format[x]);
+		list++;
+		if (format[x + 1] == '%')
+			x += 2;
 		else
-			i++;
+			x++;
 	}
-	va_end(arg_list);
-	return (counter);
+	va_end(arglist);
+	return (list);
 }
