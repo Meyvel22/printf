@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * write_i - prints an integer
- * @i: integer
+ * print_de - prints an integer
+ * @d: integer to print
  *
  * Return: number of chars and numbers to print
  */
 
-int write_i(va_list i)
+int print_de(va_list d)
 {
 	int x[10];
 	int a, f, g, add, list;
 
-	g = va_arg(i, int);
+	g = va_arg(d, int);
 	list = 0;
 	f = 1000000000;
 	x[0] = g / f;
@@ -43,4 +43,3 @@ int write_i(va_list i)
 
 	return (list);
 }
-

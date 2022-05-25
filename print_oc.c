@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * write_o - takes an unsigned int and prints it in octal notation
+ * print_oc - takes an unsigned int and prints it in octal notation
  * @o: unsigned integer
  *
  * Return: numbers printed
  */
-int write_o(va_list o)
+int print_oc(va_list o)
 {
 	unsigned int x[11];
 	unsigned int e, f, g, add;

@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * write_u - prints an unsigned in in decimal notation
+ * print_un - prints an unsigned in in decimal notation
  * @u: unsigned integer
  *
  * Return: numbers printed
  */
-int write_u(va_list u)
+int print_un(va_list u)
 {
 	unsigned int x[10];
 	unsigned int e, f, g, add;

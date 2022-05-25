@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * write_b - takes an unsigned int and prints it in binary notation
+ * print_bi - takes an unsigned int and prints it in binary notation
  * @b: unsigned integer
  *
  * Return: numbers printed
  */
 
-int write_b(va_list b)
+int print_bi(va_list b)
 {
 	unsigned int g, f, e, add;
 	unsigned int x[32];
